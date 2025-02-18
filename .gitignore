@@ -10,7 +10,7 @@ xcuserdata/
 
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
-!*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace
 
 ## Obj-C/Swift specific
 *.hmap
