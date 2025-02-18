@@ -8,6 +8,10 @@ xcuserdata/
 .DS_Store
 .build/
 
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcworkspace/contents.xcworkspacedata
+
 ## Obj-C/Swift specific
 *.hmap
 
