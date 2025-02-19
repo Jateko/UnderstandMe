@@ -54,7 +54,7 @@ let package = Package(
           .product(name: "GULEnvironment", package: "GoogleUtilities"),
           .product(name: "GTMSessionFetcher", package: "gtm-session-fetcher"),
           .product(name: "Promises", package: "Promises"),
-          .product(name: "ZipArchive", package: "ziparchive"),
+          .product(name: "ZipArchive", package: "Ziparchive"),
         ]
       )
     ]

@@ -16,7 +16,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E001C72B2D6602FD00886839 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */ = {
+		E05134042D66361F00D22175 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			additionalCompilerFlagsByRelativePath = {
 				Subtitles/GTMLogger.m = "-fno-objc-arc";
@@ -31,7 +31,7 @@
 		E001C6E82D65E2C200886839 /* UnderstandMe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E001C72B2D6602FD00886839 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */,
+				E05134042D66361F00D22175 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */,
 			);
 			path = UnderstandMe;
 			sourceTree = "<group>";
