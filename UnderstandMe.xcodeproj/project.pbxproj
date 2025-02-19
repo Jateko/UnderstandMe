@@ -6,121 +6,139 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E001C7082D65FCE200886839 /* UnderstandMeRoot in Frameworks */ = {isa = PBXBuildFile; productRef = E001C7072D65FCE200886839 /* UnderstandMeRoot */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		E01F4A362D64B1B200B90D69 /* UnderstardMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnderstardMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E001C6E62D65E2C200886839 /* UnderstandMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnderstandMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E001C7372D66056F00886839 /* UnderstandMeRoot */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnderstandMeRoot; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E01F4A522D64B51D00B90D69 /* Exceptions for "UnderstardMe" folder in "UnderstardMe" target */ = {
+		E001C72B2D6602FD00886839 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			additionalCompilerFlagsByRelativePath = {
 				Subtitles/GTMLogger.m = "-fno-objc-arc";
 				"Subtitles/GTMNSData+zlib.m" = "-fno-objc-arc";
 				Subtitles/GTMStringEncoding.m = "-fno-objc-arc";
 			};
-			target = E01F4A352D64B1B200B90D69 /* UnderstardMe */;
+			target = E001C6E52D65E2C200886839 /* UnderstandMe */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E01F4A382D64B1B200B90D69 /* UnderstardMe */ = {
+		E001C6E82D65E2C200886839 /* UnderstandMe */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E01F4A522D64B51D00B90D69 /* Exceptions for "UnderstardMe" folder in "UnderstardMe" target */,
+				E001C72B2D6602FD00886839 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */,
 			);
-			path = UnderstardMe;
+			path = UnderstandMe;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E01F4A332D64B1B200B90D69 /* Frameworks */ = {
+		E001C6E32D65E2C200886839 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E001C7082D65FCE200886839 /* UnderstandMeRoot in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E01F4A2D2D64B1B200B90D69 = {
+		E001C6DD2D65E2C200886839 = {
 			isa = PBXGroup;
 			children = (
-				E01F4A382D64B1B200B90D69 /* UnderstardMe */,
-				E01F4A372D64B1B200B90D69 /* Products */,
+				E001C7372D66056F00886839 /* UnderstandMeRoot */,
+				E001C6E82D65E2C200886839 /* UnderstandMe */,
+				E001C7062D65FCE200886839 /* Frameworks */,
+				E001C6E72D65E2C200886839 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E01F4A372D64B1B200B90D69 /* Products */ = {
+		E001C6E72D65E2C200886839 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E01F4A362D64B1B200B90D69 /* UnderstardMe.app */,
+				E001C6E62D65E2C200886839 /* UnderstandMe.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E001C7062D65FCE200886839 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E01F4A352D64B1B200B90D69 /* UnderstardMe */ = {
+		E001C6E52D65E2C200886839 /* UnderstandMe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E01F4A442D64B1B300B90D69 /* Build configuration list for PBXNativeTarget "UnderstardMe" */;
+			buildConfigurationList = E001C6F42D65E2C200886839 /* Build configuration list for PBXNativeTarget "UnderstandMe" */;
 			buildPhases = (
-				E01F4A322D64B1B200B90D69 /* Sources */,
-				E01F4A332D64B1B200B90D69 /* Frameworks */,
-				E01F4A342D64B1B200B90D69 /* Resources */,
+				E001C6E22D65E2C200886839 /* Sources */,
+				E001C6E32D65E2C200886839 /* Frameworks */,
+				E001C6E42D65E2C200886839 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E01F4A382D64B1B200B90D69 /* UnderstardMe */,
+				E001C6E82D65E2C200886839 /* UnderstandMe */,
 			);
-			name = UnderstardMe;
+			name = UnderstandMe;
 			packageProductDependencies = (
+				E001C7072D65FCE200886839 /* UnderstandMeRoot */,
 			);
-			productName = UnderstardMe;
-			productReference = E01F4A362D64B1B200B90D69 /* UnderstardMe.app */;
+			productName = UnderstandMe;
+			productReference = E001C6E62D65E2C200886839 /* UnderstandMe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E01F4A2E2D64B1B200B90D69 /* Project object */ = {
+		E001C6DE2D65E2C200886839 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					E01F4A352D64B1B200B90D69 = {
+					E001C6E52D65E2C200886839 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = E01F4A312D64B1B200B90D69 /* Build configuration list for PBXProject "UnderstardMe" */;
+			buildConfigurationList = E001C6E12D65E2C200886839 /* Build configuration list for PBXProject "UnderstandMe" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = E01F4A2D2D64B1B200B90D69;
+			mainGroup = E001C6DD2D65E2C200886839;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E01F4A372D64B1B200B90D69 /* Products */;
+			productRefGroup = E001C6E72D65E2C200886839 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E01F4A352D64B1B200B90D69 /* UnderstardMe */,
+				E001C6E52D65E2C200886839 /* UnderstandMe */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E01F4A342D64B1B200B90D69 /* Resources */ = {
+		E001C6E42D65E2C200886839 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,7 +148,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E01F4A322D64B1B200B90D69 /* Sources */ = {
+		E001C6E22D65E2C200886839 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,7 +158,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E01F4A422D64B1B300B90D69 /* Debug */ = {
+		E001C6F22D65E2C200886839 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -203,7 +221,7 @@
 			};
 			name = Debug;
 		};
-		E01F4A432D64B1B300B90D69 /* Release */ = {
+		E001C6F32D65E2C200886839 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,14 +277,14 @@
 			};
 			name = Release;
 		};
-		E01F4A452D64B1B300B90D69 /* Debug */ = {
+		E001C6F52D65E2C200886839 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnderstardMe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -280,7 +298,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstardMe;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstandMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -288,14 +310,14 @@
 			};
 			name = Debug;
 		};
-		E01F4A462D64B1B300B90D69 /* Release */ = {
+		E001C6F62D65E2C200886839 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnderstardMe/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -309,7 +331,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstardMe;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstandMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,25 +346,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E01F4A312D64B1B200B90D69 /* Build configuration list for PBXProject "UnderstardMe" */ = {
+		E001C6E12D65E2C200886839 /* Build configuration list for PBXProject "UnderstandMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E01F4A422D64B1B300B90D69 /* Debug */,
-				E01F4A432D64B1B300B90D69 /* Release */,
+				E001C6F22D65E2C200886839 /* Debug */,
+				E001C6F32D65E2C200886839 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E01F4A442D64B1B300B90D69 /* Build configuration list for PBXNativeTarget "UnderstardMe" */ = {
+		E001C6F42D65E2C200886839 /* Build configuration list for PBXNativeTarget "UnderstandMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E01F4A452D64B1B300B90D69 /* Debug */,
-				E01F4A462D64B1B300B90D69 /* Release */,
+				E001C6F52D65E2C200886839 /* Debug */,
+				E001C6F62D65E2C200886839 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E001C7072D65FCE200886839 /* UnderstandMeRoot */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UnderstandMeRoot;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = E01F4A2E2D64B1B200B90D69 /* Project object */;
+	rootObject = E001C6DE2D65E2C200886839 /* Project object */;
 }
