@@ -39,7 +39,7 @@ final class TranslatorViewModel: ObservableObject {
   
   private func start() async {
     do {
-      try await self.speechRecognizer.start(for: "en")
+      try await self.speechRecognizer.start(for: sourceLanguage)
       await self.speechRecognizer.setUpdateRecognizedText { [weak self] text in
         Task { [weak self] in
           guard let self else { return }

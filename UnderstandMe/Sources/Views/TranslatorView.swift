@@ -76,7 +76,7 @@ struct TranslatorView: View {
           LanguageListView(selectedLanguage: $viewModel.sourceLanguage)
         }
         .sheet(isPresented: $viewModel.showTargetLanguages) {
-          LanguageListView(selectedLanguage: $viewModel.sourceLanguage)
+          LanguageListView(selectedLanguage: $viewModel.targetLanguage)
         }
       }
     }
