@@ -29,7 +29,7 @@ struct TranslatorView: View {
 
             }) {
               Image("icon_change_lang")
-            }
+            }.disabled(true)
             
             Spacer()
             
@@ -75,7 +75,7 @@ struct TranslatorView: View {
         .sheet(isPresented: $viewModel.showSourceLanguages) {
           LanguageListView(selectedLanguage: $viewModel.sourceLanguage)
         }
-        .sheet(isPresented: $viewModel.showSourceLanguages) {
+        .sheet(isPresented: $viewModel.showTargetLanguages) {
           LanguageListView(selectedLanguage: $viewModel.sourceLanguage)
         }
       }
