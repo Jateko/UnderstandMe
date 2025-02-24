@@ -8,21 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		E001C7082D65FCE200886839 /* UnderstandMeRoot in Frameworks */ = {isa = PBXBuildFile; productRef = E001C7072D65FCE200886839 /* UnderstandMeRoot */; };
+		E06297952D6C95A200D5B831 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06297942D6C95A200D5B831 /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E001C6E62D65E2C200886839 /* UnderstandMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnderstandMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E001C7372D66056F00886839 /* UnderstandMeRoot */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnderstandMeRoot; sourceTree = "<group>"; };
+		E06297942D6C95A200D5B831 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		E05134042D66361F00D22175 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			additionalCompilerFlagsByRelativePath = {
-				Subtitles/GTMLogger.m = "-fno-objc-arc";
-				"Subtitles/GTMNSData+zlib.m" = "-fno-objc-arc";
-				Subtitles/GTMStringEncoding.m = "-fno-objc-arc";
+				Sources/Subtitles/GTMLogger.m = "-fno-objc-arc";
+				"Sources/Subtitles/GTMNSData+zlib.m" = "-fno-objc-arc";
+				Sources/Subtitles/GTMStringEncoding.m = "-fno-objc-arc";
 			};
+			membershipExceptions = (
+				Info.plist,
+			);
 			target = E001C6E52D65E2C200886839 /* UnderstandMe */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,6 +58,7 @@
 		E001C6DD2D65E2C200886839 = {
 			isa = PBXGroup;
 			children = (
+				E06297942D6C95A200D5B831 /* Launch.storyboard */,
 				E001C7372D66056F00886839 /* UnderstandMeRoot */,
 				E001C6E82D65E2C200886839 /* UnderstandMe */,
 				E001C7062D65FCE200886839 /* Frameworks */,
@@ -142,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E06297952D6C95A200D5B831 /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,18 +289,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
+				DEVELOPMENT_TEAM = ZLY84PUDPN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UnderstandMe/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the speech. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your speech in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +317,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstandMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,18 +329,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
+				DEVELOPMENT_TEAM = ZLY84PUDPN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UnderstandMe/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the speech. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your speech in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pavel.UnderstandMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

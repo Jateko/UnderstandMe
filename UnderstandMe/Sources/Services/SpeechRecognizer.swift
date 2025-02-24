@@ -33,16 +33,20 @@ actor SpeechRecognizer: NSObject {
   private var task: SFSpeechRecognitionTask?
   private var recognizer: SFSpeechRecognizer?
   
-  private let translator: TranslatorService
-  
-  init(translator: TranslatorService) {
-    self.translator = translator
+  var isRunning: Bool {
+    return task != nil
   }
   
-  func start() async throws {
+  private var updateRecognizedText: ((String) -> Void)?
+  
+  func setUpdateRecognizedText(_ callback: @escaping (String) -> Void) {
+    self.updateRecognizedText = callback
+  }
+
+  func start(for code: String) async throws {
     do {
       guard try await checkPermissions() else { return }
-      recognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru"))
+      recognizer = SFSpeechRecognizer(locale: Locale(identifier: code))
       try prepareEngine()
       guard let audioEngine, let request else { return }
       task = recognizer?.recognitionTask(with: request, delegate: self)
@@ -56,8 +60,19 @@ actor SpeechRecognizer: NSObject {
   }
   
   func stop() async {
+    audioEngine?.stop()
+    audioEngine?.inputNode.removeTap(onBus: 0)
     
+    request = nil
+    task = nil
+    recognizer = nil
   }
+
+//  private func stopSpeechToTextRecognition() {
+//    recognitionRequest?.endAudio()
+//    recognitionTask?.finish()
+//    recognitionTask?.cancel()
+//  }
   
   private func configureSpeechRecognizer() {
     print("configureSpeechRecognizer")
@@ -77,7 +92,7 @@ actor SpeechRecognizer: NSObject {
     configureSpeechRecognizer()
     configureEngine()
     
-    guard let audioEngine, let request else { throw RecognizerError.generalError }
+    guard let audioEngine else { throw RecognizerError.generalError }
     
     let inputNode = audioEngine.inputNode
     let recordingFormat = inputNode.outputFormat(forBus: 0)
@@ -129,21 +144,20 @@ extension SpeechRecognizer: SFSpeechRecognitionTaskDelegate {
   nonisolated func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didHypothesizeTranscription transcription: SFTranscription) {
     print("zazaza didHypothesizeTranscription \(transcription.formattedString)")
     //    print("zazaza ---- \(transcription.segments.compactMap { $0})")
-//    Task {
-//      let res = await self.translate(transcription.formattedString)
-//      await self.updateText?(transcription.formattedString)
-//      await self.updateTranslatedText?(res)
-//    }
+    Task { [weak self] in
+      guard let self else { return }
+      await self.updateRecognizedText?(transcription.formattedString)
+    }
   }
   
   // Called only for final recognitions of utterances. No more about the utterance will be reported
   nonisolated func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishRecognition recognitionResult: SFSpeechRecognitionResult) {
     print("zazaza didFinishRecognition task state = \(task.state) isFinishing = \(task.isFinishing) recognitionResult = \(recognitionResult.bestTranscription.formattedString)")
-//    Task {
-//      let res = await self.translate(recognitionResult.bestTranscription.formattedString)
-//      await self.updateText?(recognitionResult.bestTranscription.formattedString)
-//      await self.updateTranslatedText?(res)
-//    }
+    
+    Task { [weak self] in
+      guard let self else { return }
+      await self.updateRecognizedText?( recognitionResult.bestTranscription.formattedString)
+    }
   }
   
   // Called when the task is no longer accepting new audio but may be finishing final processing
@@ -180,40 +194,5 @@ extension AVAudioSession {
         continuation.resume(returning: authorized)
       }
     }
-  }
-}
-
-import MLKitTranslate
-
-actor TranslatorService {
-  
-  private var skipUntilModelDownload = false
-  
-  func translate(_ message: String) async -> String {
-    guard !skipUntilModelDownload else { return "SKIPPPPPPPPPPP" }
-    let options = TranslatorOptions(sourceLanguage: .russian, targetLanguage: .english)
-    let englishGermanTranslator = Translator.translator(options: options)
-
-    let conditions = ModelDownloadConditions(
-      allowsCellularAccess: false,
-      allowsBackgroundDownloading: true
-    )
-    do {
-      skipUntilModelDownload = true
-      try await englishGermanTranslator.downloadModelIfNeeded(with: conditions)
-      let translatedText = try await englishGermanTranslator.translate(message)
-      let date = Date()
-      let formatter = DateFormatter()
-      formatter.dateFormat = "y-MM-dd H:mm:ss.SSSS"
-      //      print("\(formatter.string(from: date)) --> translatedText \(translatedText)")
-      skipUntilModelDownload = false
-      return translatedText
-    } catch {
-      let date = Date()
-      let formatter = DateFormatter()
-      formatter.dateFormat = "y-MM-dd H:mm:ss.SSSS"
-      print("\(formatter.string(from: date)) --> error = \(error)")
-    }
-    return "NO TRANSLATION"
   }
 }

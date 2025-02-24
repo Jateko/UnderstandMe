@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct UnderstandMeApp: App {
+  @State private var showSplash = true
+  
   init() {
     let appearance = UINavigationBarAppearance()
     appearance.configureWithOpaqueBackground()
@@ -17,21 +19,37 @@ struct UnderstandMeApp: App {
       .foregroundColor: UIColor.white,
       .font: UIFont.preferredFont(forTextStyle: .title2)
     ]
-  
-    // Assign appearance to both scrollEdge and standard appearances
+    
     UINavigationBar.appearance().scrollEdgeAppearance = appearance
     UINavigationBar.appearance().standardAppearance = appearance
-    // For compact nav bars
     UINavigationBar.appearance().compactAppearance = appearance
   }
   
   var body: some Scene {
     WindowGroup {
-      let translatorService = TranslatorService()
-      let spechRecognizer = SpeechRecognizer(translator: translatorService)
-      let vm = TranslatorViewModel(speechRecognizer: spechRecognizer)
-      TranslatorView(viewModel: vm)
-        .background(Color.black)
+      ZStack {
+        //        if showSplash {
+        //          SplashView()
+        //            .transition(.opacity)
+        //        } else {
+        let translator = TranslatorService()
+        let spechRecognizer = SpeechRecognizer()
+        let vm = TranslatorViewModel(speechRecognizer: spechRecognizer,
+                                     translator: translator)
+        TranslatorView(viewModel: vm)
+          .background(Color.black)
+          .transition(.opacity)
+        //
+//      }
+      }
+      
+      .onAppear {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+          withAnimation {
+            showSplash = false
+          }
+        }
+      }
     }
   }
 }
