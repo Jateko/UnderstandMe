@@ -79,7 +79,7 @@ struct TranslatorView: View {
           LanguageListView(selectedLanguage: $viewModel.targetLanguage)
         }
       }
-    }
+    }.navigationViewStyle(StackNavigationViewStyle())
   }
   
   @ViewBuilder
