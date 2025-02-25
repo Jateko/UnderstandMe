@@ -30,10 +30,9 @@ struct UnderstandMeApp: App {
         let spechRecognizer = SpeechRecognizer()
         let vm = TranslatorViewModel(speechRecognizer: spechRecognizer,
                                      translator: translator)
-//        TranslatorView(viewModel: vm)
-        ContentView()
-//          .background(Color.black)
-//          .transition(.opacity)
+        TranslatorView(viewModel: vm)
+          .background(Color.black)
+          .transition(.opacity)
       }
     }
   }
