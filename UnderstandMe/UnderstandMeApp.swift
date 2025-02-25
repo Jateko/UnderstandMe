@@ -9,8 +9,6 @@ import SwiftUI
 
 @main
 struct UnderstandMeApp: App {
-  @State private var showSplash = true
-  
   init() {
     let appearance = UINavigationBarAppearance()
     appearance.configureWithOpaqueBackground()
@@ -28,27 +26,14 @@ struct UnderstandMeApp: App {
   var body: some Scene {
     WindowGroup {
       ZStack {
-        //        if showSplash {
-        //          SplashView()
-        //            .transition(.opacity)
-        //        } else {
         let translator = TranslatorService()
         let spechRecognizer = SpeechRecognizer()
         let vm = TranslatorViewModel(speechRecognizer: spechRecognizer,
                                      translator: translator)
-        TranslatorView(viewModel: vm)
-          .background(Color.black)
-          .transition(.opacity)
-        //
-//      }
-      }
-      
-      .onAppear {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-          withAnimation {
-            showSplash = false
-          }
-        }
+//        TranslatorView(viewModel: vm)
+        ContentView()
+//          .background(Color.black)
+//          .transition(.opacity)
       }
     }
   }
