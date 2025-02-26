@@ -48,6 +48,7 @@ let package = Package(
         dependencies: [
           "MLKitNaturalLanguage",
           "MLKitCommon",
+          "GTM",
           .product(name: "GoogleDataTransport", package: "GoogleDataTransport"),
           .product(name: "GULLogger", package: "GoogleUtilities"),
           .product(name: "GULUserDefaults", package: "GoogleUtilities"),
@@ -56,6 +57,14 @@ let package = Package(
           .product(name: "Promises", package: "Promises"),
           .product(name: "ZipArchive", package: "Ziparchive"),
         ]
+      ),
+      .target(
+        name: "GTM",
+        cSettings: [
+          .unsafeFlags([
+              "-fno-objc-arc"
+            ])
+          ]
       )
     ]
 )

@@ -20,11 +20,6 @@
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		E05134042D66361F00D22175 /* Exceptions for "UnderstandMe" folder in "UnderstandMe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			additionalCompilerFlagsByRelativePath = {
-				Sources/Subtitles/GTMLogger.m = "-fno-objc-arc";
-				"Sources/Subtitles/GTMNSData+zlib.m" = "-fno-objc-arc";
-				Sources/Subtitles/GTMStringEncoding.m = "-fno-objc-arc";
-			};
 			membershipExceptions = (
 				Info.plist,
 			);
