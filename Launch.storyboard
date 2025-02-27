@@ -25,19 +25,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52d-qi-f9l">
                                 <rect key="frame" x="76.666666666666686" y="290" width="240" height="297"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_splash" translatesAutoresizingMaskIntoConstraints="NO" id="f37-9T-T02">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="icon_splash" translatesAutoresizingMaskIntoConstraints="NO" id="f37-9T-T02">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="130"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UnderstandMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUd-nf-Itl">
-                                        <rect key="frame" x="19" y="160" width="203" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ComprehandMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUd-nf-Itl">
+                                        <rect key="frame" x="19" y="160" width="220" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wUd-nf-Itl" firstAttribute="top" secondItem="f37-9T-T02" secondAttribute="bottom" constant="30" id="7Jy-9E-ybi"/>
+                                    <constraint firstItem="wUd-nf-Itl" firstAttribute="leading" secondItem="52d-qi-f9l" secondAttribute="leading" constant="19" id="Pxg-ub-JdF"/>
+                                    <constraint firstAttribute="trailing" secondItem="wUd-nf-Itl" secondAttribute="trailing" constant="1" id="Q71-Gb-PUH"/>
+                                    <constraint firstAttribute="bottom" secondItem="wUd-nf-Itl" secondAttribute="bottom" constant="101" id="bAZ-Em-vF1"/>
+                                    <constraint firstItem="f37-9T-T02" firstAttribute="leading" secondItem="52d-qi-f9l" secondAttribute="leading" id="ftM-Wp-twT"/>
+                                    <constraint firstAttribute="trailing" secondItem="f37-9T-T02" secondAttribute="trailing" id="gbZ-7E-hci"/>
+                                    <constraint firstItem="f37-9T-T02" firstAttribute="top" secondItem="52d-qi-f9l" secondAttribute="top" id="qLd-Lz-OAL"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>

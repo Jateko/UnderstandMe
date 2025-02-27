@@ -63,7 +63,7 @@ struct TranslatorView: View {
         }
         .padding(.horizontal, 24)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationBarTitle("Understand Me", displayMode: .inline)
+        .navigationBarTitle("Comprehand Me", displayMode: .inline)
         .navigationTitle("Home")
         .toolbar {
           ToolbarItem(placement: .topBarTrailing) {
