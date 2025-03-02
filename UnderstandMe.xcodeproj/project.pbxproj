@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E001C7082D65FCE200886839 /* UnderstandMeRoot in Frameworks */ = {isa = PBXBuildFile; productRef = E001C7072D65FCE200886839 /* UnderstandMeRoot */; };
+		E02C23AA2D710ACC00F6F962 /* UnderstandMeRoot in Frameworks */ = {isa = PBXBuildFile; productRef = E02C23A92D710ACC00F6F962 /* UnderstandMeRoot */; };
 		E06297952D6C95A200D5B831 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E06297942D6C95A200D5B831 /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E001C7082D65FCE200886839 /* UnderstandMeRoot in Frameworks */,
+				E02C23AA2D710ACC00F6F962 /* UnderstandMeRoot in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			);
 			name = UnderstandMe;
 			packageProductDependencies = (
-				E001C7072D65FCE200886839 /* UnderstandMeRoot */,
+				E02C23A92D710ACC00F6F962 /* UnderstandMeRoot */,
 			);
 			productName = UnderstandMe;
 			productReference = E001C6E62D65E2C200886839 /* UnderstandMe.app */;
@@ -288,7 +288,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
 				DEVELOPMENT_TEAM = VQ47YTYDUB;
 				ENABLE_PREVIEWS = YES;
@@ -329,7 +329,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"UnderstandMe/Preview Content\"";
 				DEVELOPMENT_TEAM = VQ47YTYDUB;
 				ENABLE_PREVIEWS = YES;
@@ -386,7 +386,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E001C7072D65FCE200886839 /* UnderstandMeRoot */ = {
+		E02C23A92D710ACC00F6F962 /* UnderstandMeRoot */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UnderstandMeRoot;
 		};

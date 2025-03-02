@@ -20,7 +20,7 @@ actor TranslatorService {
     let englishGermanTranslator = Translator.translator(options: options)
     
     let conditions = ModelDownloadConditions(
-      allowsCellularAccess: false,
+      allowsCellularAccess: true,
       allowsBackgroundDownloading: true
     )
     do {
@@ -38,6 +38,7 @@ actor TranslatorService {
       let formatter = DateFormatter()
       formatter.dateFormat = "y-MM-dd H:mm:ss.SSSS"
       print("\(formatter.string(from: date)) --> error = \(error)")
+      skipUntilModelDownload = false
     }
     return "NO TRANSLATION"
   }
