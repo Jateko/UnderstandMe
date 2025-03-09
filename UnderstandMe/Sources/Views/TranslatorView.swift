@@ -56,7 +56,7 @@ struct TranslatorView: View {
             Image("microphone")
           }
           .frame(width: 56, height: 56)
-          .background(Color.trPink)
+          .background(viewModel.isRecording ? Color.gray : Color.trPink)
           .cornerRadius(28)
           
           Spacer(minLength: 16)
@@ -79,7 +79,8 @@ struct TranslatorView: View {
           LanguageListView(selectedLanguage: $viewModel.targetLanguage)
         }
       }
-    }.navigationViewStyle(StackNavigationViewStyle())
+    }
+//    .navigationViewStyle(StackNavigationViewStyle())
   }
   
   @ViewBuilder

@@ -30,6 +30,10 @@ final class TranslatorViewModel: ObservableObject {
   
   @Published var showTargetLanguages: Bool = false
   @Published var showSourceLanguages: Bool = false
+  @Published var isRecording: Bool = false
+  
+  private var lastTapTime: Date? = nil
+  private let throttleInterval: TimeInterval = 1.0
   
   init(speechRecognizer: SpeechRecognizer,
        translator: TranslatorService) {
@@ -40,6 +44,7 @@ final class TranslatorViewModel: ObservableObject {
   private func start() async {
     do {
       try await self.speechRecognizer.start(for: sourceLanguage)
+      isRecording = true
       await self.speechRecognizer.setUpdateRecognizedText { [weak self] text in
         Task { [weak self] in
           guard let self else { return }
@@ -53,6 +58,7 @@ final class TranslatorViewModel: ObservableObject {
   
   private func stop() async {
     await self.speechRecognizer.stop()
+    isRecording = false
   }
   
   private func handleSpeechUpdates(text: String) async {
@@ -70,6 +76,16 @@ final class TranslatorViewModel: ObservableObject {
   func handleSpeechButton() {
     Task { [weak self] in
       guard let self else { return }
+      
+      let now = Date()
+      
+      if let lastTap = lastTapTime, now.timeIntervalSince(lastTap) < throttleInterval {
+        print("Tap throttled!")
+        return  // Ignore the tap if within the throttle interval
+      }
+      
+      lastTapTime = now
+      
       await speechRecognizer.isRunning ? await stop() : await start()
     }
   }
