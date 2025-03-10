@@ -7,6 +7,7 @@
 
 import Foundation
 import Speech
+import UIKit
 
 enum RecognizerError: Error {
   case nilRecognizer
@@ -38,15 +39,23 @@ actor SpeechRecognizer: NSObject {
   }
   
   private var updateRecognizedText: ((String) -> Void)?
+  private var showErrorAlert: ((Error) -> Void)?
   
   func setUpdateRecognizedText(_ callback: @escaping (String) -> Void) {
     self.updateRecognizedText = callback
+  }
+  
+  func setShowErrorAlert(_ callback: @escaping (Error) -> Void) {
+    self.showErrorAlert = callback
   }
 
   func start(for code: String) async throws {
     do {
       guard try await checkPermissions() else { return }
       recognizer = SFSpeechRecognizer(locale: Locale(identifier: code))
+      if recognizer?.isAvailable == false {
+        print(";dkasld;lask;askda;skd")
+      }
       try prepareEngine()
       guard let audioEngine, let request else { return }
       task = recognizer?.recognitionTask(with: request, delegate: self)
@@ -85,6 +94,10 @@ actor SpeechRecognizer: NSObject {
     
     if #available(iOS 16, *) {
       request?.addsPunctuation = true
+    }
+    
+    if recognizer?.isAvailable == false {
+      print("ZAAZAK:ZKA:KAAAAA")
     }
   }
   
@@ -162,7 +175,7 @@ extension SpeechRecognizer: SFSpeechRecognitionTaskDelegate {
   
   // Called when the task is no longer accepting new audio but may be finishing final processing
   nonisolated func speechRecognitionTaskFinishedReadingAudio(_ task: SFSpeechRecognitionTask) {
-    print("zazaza speechRecognitionTaskFinishedReadingAudio")
+    print("zazaza speechRecogponitionTaskFinishedReadingAudio")
   }
   
   // Called when the task has been cancelled, either by client app, the user, or the system
@@ -174,6 +187,13 @@ extension SpeechRecognizer: SFSpeechRecognitionTaskDelegate {
   // If successfully is false, the error property of the task will contain error information
   nonisolated func speechRecognitionTask(_ task: SFSpeechRecognitionTask, didFinishSuccessfully successfully: Bool) {
     print("zazaza didFinishSuccessfully \(successfully)")
+    
+    Task { [weak self] in
+      guard let self else { return }
+      if task.error != nil {
+        await self.showErrorAlert?(task.error!)
+      }
+    }
   }
 }
 

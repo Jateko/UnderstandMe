@@ -16,7 +16,7 @@ struct TranslatorView: View {
       ZStack {
         Color.black
           .ignoresSafeArea(.all, edges: .bottom)
-                
+        
         VStack {
           HStack {
             configureButton {
@@ -26,7 +26,7 @@ struct TranslatorView: View {
             Spacer()
             
             Button(action: {
-
+              
             }) {
               Image("icon_change_lang")
             }.disabled(true)
@@ -42,7 +42,7 @@ struct TranslatorView: View {
           TextAreaView(text: $viewModel.recognizedText,
                        placeholder: "Your speech...",
                        languageTitle: viewModel.sourceLanguage)
-            .padding(.bottom, 16)
+          .padding(.bottom, 16)
           TextAreaView(text: $viewModel.translatedText,
                        placeholder: "Translated text...",
                        languageTitle: viewModel.targetLanguage)
@@ -51,7 +51,7 @@ struct TranslatorView: View {
           
           Button(action: {
             print("speech")
-              viewModel.handleSpeechButton()
+            viewModel.handleSpeechButton()
           }) {
             Image("microphone")
           }
@@ -78,9 +78,19 @@ struct TranslatorView: View {
         .sheet(isPresented: $viewModel.showTargetLanguages) {
           LanguageListView(selectedLanguage: $viewModel.targetLanguage)
         }
+        // Show alert
+        .alert("Siri and Dictation are disabled", isPresented: $viewModel.showErrorAlert) {
+          Button("Cancel", role: .cancel) {
+            viewModel.openSettings()
+            Task {
+              await self.viewModel.stop()
+            }
+          }
+        } message: {
+          Text("Siri and Dictation are currently disabled. To enable Dictation, please go to Settings > General > Keyboard and turn on 'Enable Dictation'.")
+        }
       }
     }
-//    .navigationViewStyle(StackNavigationViewStyle())
   }
   
   @ViewBuilder
@@ -96,4 +106,6 @@ struct TranslatorView: View {
     .background(Color.trBlack)
     .cornerRadius(24.0)
   }
+  
+  
 }

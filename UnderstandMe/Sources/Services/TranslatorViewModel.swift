@@ -31,6 +31,7 @@ final class TranslatorViewModel: ObservableObject {
   @Published var showTargetLanguages: Bool = false
   @Published var showSourceLanguages: Bool = false
   @Published var isRecording: Bool = false
+  @Published var showErrorAlert: Bool = false
   
   private var lastTapTime: Date? = nil
   private let throttleInterval: TimeInterval = 1.0
@@ -41,7 +42,7 @@ final class TranslatorViewModel: ObservableObject {
     self.translator = translator
   }
   
-  private func start() async {
+  func start() async {
     do {
       try await self.speechRecognizer.start(for: sourceLanguage)
       isRecording = true
@@ -51,12 +52,19 @@ final class TranslatorViewModel: ObservableObject {
           await self.handleSpeechUpdates(text: text)
         }
       }
+      
+      await self.speechRecognizer.setShowErrorAlert { [weak self] error in
+        Task { [weak self] in
+          guard let self else { return }
+          self.showErrorAlert = true
+        }
+      }
     } catch {
       print(error)
     }
   }
   
-  private func stop() async {
+  func stop() async {
     await self.speechRecognizer.stop()
     isRecording = false
   }
@@ -92,5 +100,13 @@ final class TranslatorViewModel: ObservableObject {
   
   func copyTextToClipboard(_ text: String) {
     UIPasteboard.general.string = text
+  }
+  
+  func openSettings() {
+//    Task { @MainActor in
+//      if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+//          UIApplication.shared.open(appSettings, options: [:], completionHandler: nil)
+//      }
+//    }
   }
 }
